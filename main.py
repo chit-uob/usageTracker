@@ -25,6 +25,7 @@ if __name__ == '__main__':
                 file_manipulation.record_start_playing()
             else:
                 file_manipulation.record_stop_playing()
+            was_previously_playing = is_playing
         time.sleep(10)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

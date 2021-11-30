@@ -1,5 +1,7 @@
 # To monitor consecutive playtime
 import os  # just for the next line
+import time
+
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"  # Stop pygame from displaying welcoming message
 from pygame import mixer  # Need it just to play sound
 

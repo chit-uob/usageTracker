@@ -4,13 +4,13 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 from pygame import mixer
 
 def react_to_time(minutes):
+    if minutes == 15:
+        print("You have been playing for 15 minutes!")
+        make_ding_sound()
     if minutes == 30:
-        print("You have been playing for 30 minutes!")
+        print("You have been playing for 30 minutes")
         make_ding_sound()
-    if minutes == 45:
-        print("You have been playing for 45 minutes")
-        make_ding_sound()
-    if minutes > 45:
+    if minutes > 30:
         print(f"You have been playing for {minutes} minutes")
         make_ding_sound()
 

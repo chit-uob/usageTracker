@@ -1,7 +1,8 @@
 # To monitor consecutive playtime
-import os
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
-from pygame import mixer
+import os  # just for the next line
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"  # Stop pygame from displaying welcoming message
+from pygame import mixer  # Need it just to play sound
+
 
 def react_to_time(minutes):
     if minutes == 15:
@@ -13,7 +14,6 @@ def react_to_time(minutes):
     if minutes > 30:
         print(f"You have been playing for {minutes} minutes")
         make_ding_sound()
-
 
 
 def make_ding_sound():

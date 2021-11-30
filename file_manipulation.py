@@ -1,6 +1,6 @@
 # To save/get data from file
-import pathlib
-from datetime import datetime
+import pathlib  # for better path handling
+from datetime import datetime  # To record accurate time
 
 
 def get_file_path():

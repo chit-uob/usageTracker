@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     # The main loop that runs forever
     while True:
-        is_playing = process_checker.check_if_process_is_running("t2gp.exe")
+        is_playing = process_checker.check_if_process_is_running("t2gp.exe") or process_checker.check_if_process_is_running("javaw.exe") or process_checker.check_if_process_is_running("EoCApp.exe")
         if is_playing != was_previously_playing:  # If activity changes
             if is_playing:
                 time_monitor.make_ding_sound()

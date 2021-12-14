@@ -3,6 +3,9 @@ import pathlib  # for better path handling
 from datetime import datetime  # To record accurate time
 
 
+pathlib.Path(r"data_files/").mkdir(parents=True, exist_ok=True)
+
+
 def get_file_path():
     date_format = datetime.now().strftime("%Y%m%d")
     filepath = pathlib.Path(r"data_files/" + date_format + ".txt")

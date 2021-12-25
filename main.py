@@ -7,7 +7,9 @@ import time_monitor  # to monitor how long am I playing
 
 
 # List of processes that are games
-PROCESS_LIST = ["t2gp.exe", "javaw.exe", "EoCApp.exe"]
+PROCESS_DICT = {"t2gp.exe": "Sid Meier's Civilization VI",
+                "javaw.exe": "Minecraft",
+                "EoCApp.exe": "Divinity Origin Sin 2"}
 
 
 def print_welcome(name):
@@ -22,11 +24,12 @@ if __name__ == '__main__':
 
     # The main loop that runs forever
     while True:
-        is_playing = process_checker.check_if_processes_are_running(PROCESS_LIST)
+        game_list = process_checker.check_what_games_are_running(PROCESS_DICT)
+        is_playing = len(game_list) > 0
         if is_playing != was_previously_playing:  # If activity changes
             if is_playing:
                 time_monitor.make_ding_sound()
-                file_manipulation.record_start_playing()
+                file_manipulation.record_start_playing(game_list[0])
             else:
                 file_manipulation.record_stop_playing()
                 consecutive_playtime_minutes = 0  # Reset because I am not playing anymore

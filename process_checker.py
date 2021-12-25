@@ -16,8 +16,9 @@ def check_if_process_is_running(process_name):
     return False
 
 
-def check_if_processes_are_running(process_list):
-    for item in process_list:
-        if check_if_process_is_running(item):
-            return True
-    return False
+def check_what_games_are_running(process_dict):
+    process_list = []
+    for key in process_dict.keys():
+        if check_if_process_is_running(key):
+            process_list.append(process_dict[key])
+    return process_list

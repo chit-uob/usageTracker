@@ -6,6 +6,10 @@ import file_manipulation  # to log things in files
 import time_monitor  # to monitor how long am I playing
 
 
+# List of processes that are games
+PROCESS_LIST = ["t2gp.exe", "javaw.exe", "EoCApp.exe"]
+
+
 def print_welcome(name):
     print(f'Hi, {name}. Welcome to the usage tracker to make sure you are productive')
 
@@ -18,14 +22,14 @@ if __name__ == '__main__':
 
     # The main loop that runs forever
     while True:
-        is_playing = process_checker.check_if_process_is_running("t2gp.exe") or process_checker.check_if_process_is_running("javaw.exe") or process_checker.check_if_process_is_running("EoCApp.exe")
+        is_playing = process_checker.check_if_processes_are_running(PROCESS_LIST)
         if is_playing != was_previously_playing:  # If activity changes
             if is_playing:
                 time_monitor.make_ding_sound()
                 file_manipulation.record_start_playing()
             else:
                 file_manipulation.record_stop_playing()
-                consecutive_playtime_minutes = 0  # Reset because I am not playng anymore
+                consecutive_playtime_minutes = 0  # Reset because I am not playing anymore
             was_previously_playing = is_playing  # Update
 
         # If on going playing

@@ -8,8 +8,9 @@ import time_monitor  # to monitor how long am I playing
 
 # List of processes that are games
 PROCESS_DICT = {"t2gp.exe": "Sid Meier's Civilization VI",
-                "javaw.exe": "Minecraft",
-                "EoCApp.exe": "Divinity Origin Sin 2"}
+                "Minecraft.exe": "Minecraft",
+                "EoCApp.exe": "Divinity Origin Sin 2",
+                "Control_DX12.exe": "Control"}
 
 
 def print_welcome(name):

@@ -1,0 +1,10 @@
+---
+  name: "Chit"
+
+  # game name = process name
+  games:
+    t2gp.exe: "Sid Meier's Civilization VI"
+    Minecraft.exe: "Minecraft"
+    EoCApp.exe: "Divinity Origin Sin 2"
+    Control_DX12.exe: "Control"
+    Cities.exe: "Cities Skyline"

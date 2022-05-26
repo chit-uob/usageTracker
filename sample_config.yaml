@@ -1,10 +1,13 @@
 ---
-  name: "Chit"
+  name: Sample Name
 
-  # game name = process name
+  # Here you can edit the games that the program will remind you about, the format is:
+  # process name: game name
+  # Add a new line for a new game, remember to follow the indentation
+  # Games that I play are left as an example for you
   games:
-    t2gp.exe: "Sid Meier's Civilization VI"
-    Minecraft.exe: "Minecraft"
-    EoCApp.exe: "Divinity Origin Sin 2"
-    Control_DX12.exe: "Control"
-    Cities.exe: "Cities Skyline"
+    t2gp.exe: Sid Meier's Civilization VI
+    Minecraft.exe: Minecraft
+    EoCApp.exe: Divinity Origin Sin 2
+    Control_DX12.exe: Control
+    Cities.exe: Cities Skyline

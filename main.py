@@ -4,14 +4,17 @@ import time  # for sleep
 import process_checker  # to check what processes are running
 import file_manipulation  # to log things in files
 import time_monitor  # to monitor how long am I playing
+import yaml
 
+# Load config
+with open('config.yaml', 'r') as f:
+    yaml_config = yaml.safe_load(f)
 
 # List of processes that are games
-PROCESS_DICT = {"t2gp.exe": "Sid Meier's Civilization VI",
-                "Minecraft.exe": "Minecraft",
-                "EoCApp.exe": "Divinity Origin Sin 2",
-                "Control_DX12.exe": "Control",
-                "Cities.exe": "Cities Skyline"}
+process_dict = {}
+for process_name in yaml_config['games']:
+    # Link process name to game name
+    process_dict[process_name] = yaml_config['games'][process_name]
 
 
 def print_welcome(name):
@@ -19,14 +22,15 @@ def print_welcome(name):
 
 
 if __name__ == '__main__':
-    print_welcome('Chit')
+
+    print_welcome(yaml_config['name'])
 
     was_previously_playing = False  # Because I am not playing when the script starts
     consecutive_playtime_minutes = 0
 
     # The main loop that runs forever
     while True:
-        game_list = process_checker.check_what_games_are_running(PROCESS_DICT)
+        game_list = process_checker.check_what_games_are_running(process_dict)
         is_playing = len(game_list) > 0
         if is_playing != was_previously_playing:  # If activity changes
             if is_playing:

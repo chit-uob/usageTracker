@@ -1,4 +1,5 @@
 data_files/*
+!data_files/.gitkeep
 audio_files/tts_files/*
 !audio_files/tts_files/.gitkeep
 config.yaml
